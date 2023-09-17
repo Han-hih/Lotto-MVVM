@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let apiManager = APIRequest()
+    
+    var lotto: Lotto?
+    
     let sessionTextField = {
         let tf = UITextField()
         tf.placeholder = "회차를 입력해주세요"
@@ -54,8 +58,24 @@ class ViewController: UIViewController {
     
     
     @objc func sessionButtonTapped(_ sender: UIButton) {
-        
+        apiManager.lottoRequest(sessionTextField.text!) { [weak self] value in
+            switch value {
+            case .success(let lotto):
+                self?.lotto = lotto
+                print(lotto)
+            case .failure(let error):
+                switch error {
+                case .dataError:
+                    print("데이터 에러")
+                case .networkingError:
+                    print("네트워킹 에러")
+                case .parseError:
+                    print("파싱 에러")
+                }
+            }
+            }
+        }
     }
 
-}
+
 
