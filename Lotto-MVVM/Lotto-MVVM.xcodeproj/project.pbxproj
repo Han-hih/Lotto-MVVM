@@ -44,6 +44,8 @@
 		80D6635F2AB74AAE00F3281C = {
 			isa = PBXGroup;
 			children = (
+				80D6636B2AB74AAE00F3281C /* AppDelegate.swift */,
+				80D6636D2AB74AAE00F3281C /* SceneDelegate.swift */,
 				80D6636A2AB74AAE00F3281C /* Lotto-MVVM */,
 				80D663692AB74AAE00F3281C /* Products */,
 			);
@@ -62,10 +64,8 @@
 			children = (
 				80D663822AB74EF200F3281C /* APIRequest */,
 				80D6637F2AB74AE100F3281C /* Models */,
-				80D6636B2AB74AAE00F3281C /* AppDelegate.swift */,
-				80D6636D2AB74AAE00F3281C /* SceneDelegate.swift */,
-				80D6636F2AB74AAE00F3281C /* ViewController.swift */,
-				80D663712AB74AAE00F3281C /* Main.storyboard */,
+				80D663852AB753D400F3281C /* Views */,
+				80D663862AB753DF00F3281C /* Controllers */,
 				80D663742AB74AAF00F3281C /* Assets.xcassets */,
 				80D663762AB74AAF00F3281C /* LaunchScreen.storyboard */,
 				80D663792AB74AAF00F3281C /* Info.plist */,
@@ -87,6 +87,22 @@
 				80D663832AB74F0B00F3281C /* APIRequest.swift */,
 			);
 			path = APIRequest;
+			sourceTree = "<group>";
+		};
+		80D663852AB753D400F3281C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80D663712AB74AAE00F3281C /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80D663862AB753DF00F3281C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80D6636F2AB74AAE00F3281C /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
