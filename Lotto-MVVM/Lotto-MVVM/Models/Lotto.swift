@@ -18,3 +18,9 @@ struct Lotto: Codable {
     let drwtNo6: Int
     let bnusNo: Int
 }
+
+enum NetworkError: Error {
+    case networkingError
+    case dataError
+    case parseError
+}
