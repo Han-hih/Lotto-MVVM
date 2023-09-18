@@ -7,3 +7,21 @@
 
 import Foundation
 
+class NetflixViewModel {
+    
+    var email = Observable("aaa@aaa.com")
+    var isValid = Observable(false)
+    
+    func emailTextChaned() {
+        if email.value.contains("@") {
+            isValid.value = true
+        } else {
+            isValid.value = false
+            print("Dddd")
+        }
+    }
+    
+}
+
+
+
