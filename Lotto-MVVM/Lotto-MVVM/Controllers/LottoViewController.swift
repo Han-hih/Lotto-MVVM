@@ -13,6 +13,8 @@ class LottoViewController: UIViewController {
     
     var lotto: Lotto?
     
+    var viewModel = LottoViewModel()
+    
     let sessionTextField = {
         let tf = UITextField()
         tf.placeholder = "회차를 입력해주세요"
@@ -33,10 +35,30 @@ class LottoViewController: UIViewController {
         return bt
     }()
     
+    let resultLabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20)
+        label.text = "당첨 결과"
+        return label
+    }()
+    
+    let firstMoney = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 30)
+        label.text = "1등 당첨 금액"
+        return label
+    }()
+    
+    let resultDate = {
+        let label = UILabel()
+        label.text = "2000-08-22"
+        
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        [sessionTextField, sessionButton].forEach {
+        [sessionTextField, sessionButton, resultLabel, firstMoney, resultDate].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -53,6 +75,15 @@ class LottoViewController: UIViewController {
             //당첨 정보 확인 버튼
             sessionButton.topAnchor.constraint(equalTo: sessionTextField.bottomAnchor, constant: 50),
             sessionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            //결과 번호 레이블
+            resultLabel.topAnchor.constraint(equalTo: sessionButton.bottomAnchor, constant: 50),
+            resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            //1등 당첨 금액
+            firstMoney.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 50),
+            firstMoney.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            //회차 날짜
+            resultDate.topAnchor.constraint(equalTo: firstMoney.bottomAnchor, constant: 50),
+            resultDate.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
