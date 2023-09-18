@@ -21,7 +21,7 @@ class CustomLabel: UILabel {
     func setLabel() {
         textColor = .white
         textAlignment = .center
-        font = .systemFont(ofSize: 20)
+        font = .systemFont(ofSize: 18)
     }
     
     

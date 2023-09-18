@@ -11,6 +11,7 @@
 		806A05842AB85F480038E5CA /* NetflixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A05832AB85F480038E5CA /* NetflixViewModel.swift */; };
 		806A05862AB8612E0038E5CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A05852AB8612E0038E5CA /* CustomTextField.swift */; };
 		806A05882AB864750038E5CA /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A05872AB864750038E5CA /* CustomLabel.swift */; };
+		806A058A2AB870DC0038E5CA /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A05892AB870DC0038E5CA /* CustomView.swift */; };
 		80D6636C2AB74AAE00F3281C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6636B2AB74AAE00F3281C /* AppDelegate.swift */; };
 		80D6636E2AB74AAE00F3281C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6636D2AB74AAE00F3281C /* SceneDelegate.swift */; };
 		80D663702AB74AAE00F3281C /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6636F2AB74AAE00F3281C /* LottoViewController.swift */; };
@@ -28,6 +29,7 @@
 		806A05832AB85F480038E5CA /* NetflixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixViewModel.swift; sourceTree = "<group>"; };
 		806A05852AB8612E0038E5CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		806A05872AB864750038E5CA /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		806A05892AB870DC0038E5CA /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		80D663682AB74AAE00F3281C /* Lotto-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lotto-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D6636B2AB74AAE00F3281C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D6636D2AB74AAE00F3281C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				80D663712AB74AAE00F3281C /* Main.storyboard */,
 				806A05852AB8612E0038E5CA /* CustomTextField.swift */,
 				806A05872AB864750038E5CA /* CustomLabel.swift */,
+				806A05892AB870DC0038E5CA /* CustomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				806A05842AB85F480038E5CA /* NetflixViewModel.swift in Sources */,
 				80D663842AB74F0B00F3281C /* APIRequest.swift in Sources */,
 				80D663882AB75AB900F3281C /* Observable.swift in Sources */,
+				806A058A2AB870DC0038E5CA /* CustomView.swift in Sources */,
 				80D6636E2AB74AAE00F3281C /* SceneDelegate.swift in Sources */,
 				806A05822AB85F360038E5CA /* NetflixViewController.swift in Sources */,
 			);
