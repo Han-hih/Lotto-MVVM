@@ -8,12 +8,8 @@
 import UIKit
 
 class LottoViewController: UIViewController {
-
-    let apiManager = APIRequest()
     
-    var lotto: Lotto?
-    
-    var viewModel = LottoViewModel()
+        var viewModel = LottoViewModel()
     
     let sessionTextField = {
         let tf = UITextField()
@@ -63,8 +59,26 @@ class LottoViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         setAutoLayout()
+        bindData()
     }
     
+    func bindData() {
+        DispatchQueue.global().async {
+            self.viewModel.number1.bind { value in
+                DispatchQueue.main.async {
+                    self.resultLabel.text = "\(value)"
+                }
+            }
+            self.viewModel.firstMoney.bind { value in
+                DispatchQueue.main.async {
+                    self.firstMoney.text = "\(value)"
+                }
+            }
+            
+            
+        }
+        
+    }
     func setAutoLayout() {
         NSLayoutConstraint.activate([
             //회차정보 입력 텍스트필드
@@ -89,22 +103,8 @@ class LottoViewController: UIViewController {
     
     
     @objc func sessionButtonTapped(_ sender: UIButton) {
-        apiManager.lottoRequest(sessionTextField.text!) { [weak self] value in
-            switch value {
-            case .success(let lotto):
-                self?.lotto = lotto
-                print(lotto)
-            case .failure(let error):
-                switch error {
-                case .dataError:
-                    print("데이터 에러")
-                case .networkingError:
-                    print("네트워킹 에러")
-                case .parseError:
-                    print("파싱 에러")
-                }
-            }
-            }
+        guard let sessionNumber = Int(sessionTextField.text ?? "0") else { return }
+        viewModel.resultButtonTapped(sessionNumber: sessionNumber)
         }
     }
 

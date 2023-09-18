@@ -8,7 +8,7 @@
 import UIKit
 
 class APIRequest {
-    func lottoRequest(_ session: String, completion: @escaping (Result<Lotto?, NetworkError>) -> Void) {
+    func lottoRequest(_ session: Int, completion: @escaping (Result<Lotto?, NetworkError>) -> Void) {
         guard let url = URL(string: "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=" + "\(session)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
