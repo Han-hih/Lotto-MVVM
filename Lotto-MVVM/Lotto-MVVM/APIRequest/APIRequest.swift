@@ -24,7 +24,9 @@ class APIRequest {
             
             do {
                 let result = try JSONDecoder().decode(Lotto.self, from: data)
-                completion(.success(result))
+                DispatchQueue.main.async {
+                    completion(.success(result))
+                }
                 return
             } catch {
                 completion(.failure(.parseError))

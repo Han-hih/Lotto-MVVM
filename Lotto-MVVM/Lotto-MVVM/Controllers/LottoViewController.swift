@@ -9,7 +9,7 @@ import UIKit
 
 class LottoViewController: UIViewController {
     
-        var viewModel = LottoViewModel()
+    var viewModel = LottoViewModel()
     
     let sessionTextField = {
         let tf = UITextField()
@@ -63,22 +63,18 @@ class LottoViewController: UIViewController {
     }
     
     func bindData() {
-        DispatchQueue.global().async {
-            self.viewModel.number1.bind { value in
-                DispatchQueue.main.async {
-                    self.resultLabel.text = "\(value)"
-                }
-            }
-            self.viewModel.firstMoney.bind { value in
-                DispatchQueue.main.async {
-                    self.firstMoney.text = "\(value)"
-                }
-            }
-            
-            
-        }
         
+        self.viewModel.numbers.bind { value in
+            self.resultLabel.text = "\(value)"
+        }
+        self.viewModel.firstMoney.bind { value in
+            self.firstMoney.text = "\(value)"
+        }
+        self.viewModel.date.bind { value in
+            self.resultDate.text = "\(value)"
+        }
     }
+    
     func setAutoLayout() {
         NSLayoutConstraint.activate([
             //회차정보 입력 텍스트필드
@@ -103,10 +99,11 @@ class LottoViewController: UIViewController {
     
     
     @objc func sessionButtonTapped(_ sender: UIButton) {
+        view.endEditing(true)
         guard let sessionNumber = Int(sessionTextField.text ?? "0") else { return }
         viewModel.resultButtonTapped(sessionNumber: sessionNumber)
-        }
     }
+}
 
 
 

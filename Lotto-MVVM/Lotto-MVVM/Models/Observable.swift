@@ -23,7 +23,7 @@ class Observable<T> {
     
     func bind(_ sample: @escaping (T) -> Void) {
         sample(value)
-        print(value, "0000000")
+//        print(value, "0000000")
         listener = sample
     }
     

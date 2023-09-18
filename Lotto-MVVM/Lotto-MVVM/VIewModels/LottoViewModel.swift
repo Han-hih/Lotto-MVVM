@@ -15,13 +15,7 @@ class LottoViewModel {
     
     var searchBarText: Observable<Int>?
     
-    var number1 = Observable(1)
-    var number2 = Observable(2)
-    var number3 = Observable(3)
-    var number4 = Observable(4)
-    var number5 = Observable(5)
-    var number6 = Observable(6)
-    var bonusNumber = Observable(7)
+    var numbers = Observable("1")
     var firstMoney = Observable("")
     var date = Observable("")
     
@@ -36,16 +30,9 @@ class LottoViewModel {
             print(self?.searchBarText?.value ?? 0, "dddddddd")
             switch result {
             case .success(let lotto):
-                guard let lotto = lotto else {
-                    return
-                }
-                self?.number1.value = lotto.drwtNo1
-                self?.number2.value = lotto.drwtNo2
-                self?.number3.value = lotto.drwtNo3
-                self?.number4.value = lotto.drwtNo4
-                self?.number5.value = lotto.drwtNo5
-                self?.number6.value = lotto.drwtNo6
-                self?.bonusNumber.value = lotto.bnusNo
+                guard let lotto = lotto else { return }
+                let number = "\(lotto.drwtNo1) \(lotto.drwtNo2) \(lotto.drwtNo3) \(lotto.drwtNo4) \(lotto.drwtNo5) \(lotto.drwtNo6) + \(lotto.bnusNo)"
+                self?.numbers.value = number
                 self?.firstMoney.value = (self?.format(for: lotto.firstWinamnt))!
                 self?.date.value = lotto.drwNoDate
                 
